@@ -53,8 +53,46 @@ public class TestMain {
 		/**
 		 * START OF TESTING CODES
 		 */
+		
+		// ====================== Test 1: 1 to n messaging ======================
+		
+		/*System.out.println('\n' + "Testing 1:N messaging..." + '\n');
+		for(int i = 0; i < numNodes; i++){
+			apps[0].routeMyMsgDirect(apps[i].node.getLocalNodeHandle());
+		}
+		env.getTimeSource().sleep(3000);*/
+		
+		// ====================== Test 2: N to 1 messaging ======================
 
+		/*System.out.println("Testing N:1 messaging..." + '\n');
+		for(int j = 0; j < numNodes; j++){
+			apps[j].routeMyMsgDirect(apps[0].node.getLocalNodeHandle());
+		}
+		env.getTimeSource().sleep(3000);*/
 
+		// ====================== Test 3: Pastry Message Routing ====================
+		
+		/*System.out.println('\n' + "Testing Pastry routing..." + '\n');
+		for(int k = 0; k < 10; k++){
+			System.out.println("Message " + (k+1) + ":");
+			apps[0].routeMyMsg(nidFactory.generateNodeId());
+			env.getTimeSource().sleep(1000);
+			System.out.println("\n");
+		}
+		
+		env.getTimeSource().sleep(3000);*/
+		
+		// ============= Test 4: Pastry Multicast Protocol =========================
+		
+		/*System.out.println('\n' + "Testing multicast..." + '\n');
+		apps[0].sendMulticast();
+		env.getTimeSource().sleep(3000);*/
+		
+		// =========== Test 5: Pastry Anycast Protocol =============================
+		
+		System.out.println('\n' + "Testing anycast..."+ '\n');
+		apps[0].sendAnycast();
+		
 		
 		/**
 		 * END OF TESTING CODES
